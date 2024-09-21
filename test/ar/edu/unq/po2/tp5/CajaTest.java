@@ -29,7 +29,7 @@ class CajaTest {
 	}
 	
 	@Test
-	void verificarStock() {
+	void verificarStock() { 
 		assertEquals(arroz.getStock(), 20);
 		assertEquals(vino.getStock(), 150);
 		caja.registrarProducto(arroz);
