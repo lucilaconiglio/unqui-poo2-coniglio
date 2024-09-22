@@ -9,10 +9,5 @@ public class CajaVenta extends Caja implements Agencia {
 	
 	}
 
-	@Override
-	public double getMontoTotal() {
-		
-	
-	}
 	
 }
