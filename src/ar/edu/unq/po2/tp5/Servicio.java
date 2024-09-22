@@ -7,19 +7,19 @@ public class Servicio {
 	
 	private double costoPorUnidadConsumida;
 	private double cantidadDeUnidadesConsumidas;
-	private int tasa;
+	private int tasaImpuesto;
 	
-	public Servicio(double costoPorUnidadConsumida, double cantidadDeUnidadesConsumidas, int tasa) {
+	public Servicio(double costoPorUnidadConsumida, double cantidadDeUnidadesConsumidas, int tasaImpuesto) {
 		this.costoPorUnidadConsumida = costoPorUnidadConsumida;
 		this.cantidadDeUnidadesConsumidas = cantidadDeUnidadesConsumidas;
-		this.tasa = tasa;
+		this.tasaImpuesto = tasaImpuesto;
 	}
 	
-	public double montoAPagar() {
+	public double montoFactura() {
 		return costoPorUnidadConsumida * cantidadDeUnidadesConsumidas;
 	}
 	
-	public int getImpuesto() {
-		return tasa;
+	public double montoAPagar() {
+		return montoFactura() * tasaImpuesto;
 	}
 }

@@ -3,15 +3,17 @@ package ar.edu.unq.po2.tp5;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Factura  {
-	
-	List<Servicio> servicios = new ArrayList<>();
-	List<Impuesto> impuestos = new ArrayList<>();
-	
+public class Factura {
 
-	public void registrarPago(Agencia agencia) {
-		agencia.registrarPago(this);
+	List<Servicio> servicios = new ArrayList<>();
+
+	public void addServicio(Servicio servicio) {
+		servicios.add(servicio);
 	}
-	
+
+	public double motoTotal() {
+		return servicios.stream().mapToDouble(s -> s.montoAPagar()).sum();
+	}
+
 	
 }
