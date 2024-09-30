@@ -5,15 +5,15 @@ import java.util.List;
 
 public class Caja {
 	
-	private List<Cobrable> productos = new ArrayList<>();
+	private List<Cobrable> cobrables = new ArrayList<>();
 	
-	public void registrarProducto(Cobrable cobrable){
+	public void registrar(Cobrable cobrable){
 		cobrable.registrarPago();
-		productos.add(cobrable);
+		cobrables.add(cobrable);
 	}
 	
 	public double getMontoTotal() {
-		return productos.stream()
+		return cobrables.stream()
 					  .mapToDouble(p->p.getMonto())
 					  .sum();
 	}
