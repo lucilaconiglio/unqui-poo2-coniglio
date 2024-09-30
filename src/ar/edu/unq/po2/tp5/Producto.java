@@ -2,17 +2,17 @@ package ar.edu.unq.po2.tp5;
 
 public abstract class Producto implements Cobrable{
 
-	protected double precio;
-	protected int stock;
+	private double monto;
+	private int stock;
 	
-	public Producto(double precio, int stock) {
-		this.precio = precio;
+	public Producto(double monto, int stock) {
+		this.monto = monto;
 		this.stock = stock;
 	}
 	
 	@Override
 	public double getMonto() {
-		return precio;
+		return monto;
 	}
 
 	public int getStock() {
