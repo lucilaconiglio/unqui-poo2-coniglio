@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.tp5;
 
-public abstract class Producto implements Cobrable{
+public class Producto implements Cobrable{
 
 	private double monto;
 	private int stock;
