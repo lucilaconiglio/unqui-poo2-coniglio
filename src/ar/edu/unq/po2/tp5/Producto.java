@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.tp5;
 
-public abstract class Producto {
+public abstract class Producto implements Cobrable{
 
 	protected double precio;
 	protected int stock;
@@ -10,7 +10,8 @@ public abstract class Producto {
 		this.stock = stock;
 	}
 	
-	public double getPrecio() {
+	@Override
+	public double getMonto() {
 		return precio;
 	}
 
@@ -22,9 +23,14 @@ public abstract class Producto {
 		stock += cantidad;
 	}
 	
-	public void decrementarStock() {
+	private void decrementarStock() {
 		// verificar stock
 		stock -= 1;
+	}
+	
+	@Override
+	public void registrarPago() {
+		decrementarStock();
 	}
 	
 	

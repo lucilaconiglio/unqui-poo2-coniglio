@@ -3,23 +3,21 @@ package ar.edu.unq.po2.tp5;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Servicio {
+public class Servicio extends Factura{
 	
 	private double costoPorUnidadConsumida;
 	private double cantidadDeUnidadesConsumidas;
-	private int tasaImpuesto;
+
 	
-	public Servicio(double costoPorUnidadConsumida, double cantidadDeUnidadesConsumidas, int tasaImpuesto) {
+	public Servicio(Agencia agencia, double costoPorUnidadConsumida, double cantidadDeUnidadesConsumidas) {
+		super(agencia);
 		this.costoPorUnidadConsumida = costoPorUnidadConsumida;
 		this.cantidadDeUnidadesConsumidas = cantidadDeUnidadesConsumidas;
-		this.tasaImpuesto = tasaImpuesto;
 	}
 	
-	public double montoFactura() {
+	@Override
+	public double getMonto() {
 		return costoPorUnidadConsumida * cantidadDeUnidadesConsumidas;
 	}
 	
-	public double montoAPagar() {
-		return montoFactura() * tasaImpuesto;
-	}
 }

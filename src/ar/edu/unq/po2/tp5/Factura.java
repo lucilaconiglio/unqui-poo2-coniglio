@@ -3,17 +3,23 @@ package ar.edu.unq.po2.tp5;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Factura {
-
-	List<Servicio> servicios = new ArrayList<>();
-
-	public void addServicio(Servicio servicio) {
-		servicios.add(servicio);
+abstract class Factura implements Cobrable {
+	
+	private Agencia agencia;
+	
+	public Factura(Agencia agencia) {
+		this.agencia = agencia;
 	}
-
-	public double motoTotal() {
-		return servicios.stream().mapToDouble(s -> s.montoAPagar()).sum();
+	
+	public Agencia getAgencia() {
+		return agencia;
 	}
+	
 
+	@Override
+	public void registrarPago() {
+		getAgencia().registrarPago(this);
+		
+	}
 	
 }

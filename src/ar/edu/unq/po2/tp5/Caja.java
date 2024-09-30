@@ -5,16 +5,16 @@ import java.util.List;
 
 public class Caja {
 	
-	private List<Producto> productos = new ArrayList<>();
+	private List<Cobrable> productos = new ArrayList<>();
 	
-	public void registrarProducto(Producto producto){
-		producto.decrementarStock();
-		productos.add(producto);
+	public void registrarProducto(Cobrable cobrable){
+		cobrable.registrarPago();
+		productos.add(cobrable);
 	}
 	
 	public double getMontoTotal() {
 		return productos.stream()
-					  .mapToDouble(p->p.getPrecio())
+					  .mapToDouble(p->p.getMonto())
 					  .sum();
 	}
 	

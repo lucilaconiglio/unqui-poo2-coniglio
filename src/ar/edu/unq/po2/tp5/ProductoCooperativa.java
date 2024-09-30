@@ -9,7 +9,7 @@ public class ProductoCooperativa extends Producto {
 	}
 	
 	@Override
-	public double getPrecio() {
+	public double getMonto() {
 		return precio * descuentoIva;
 	}
 
