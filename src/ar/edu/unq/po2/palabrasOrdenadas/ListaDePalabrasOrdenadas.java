@@ -19,6 +19,7 @@ public class ListaDePalabrasOrdenadas {
 				String a = ((String)palabraA);
 				String b = ((String)palabraB);
 				return a.compareToIgnoreCase(b);
+				
 			}
 		};
 	}
