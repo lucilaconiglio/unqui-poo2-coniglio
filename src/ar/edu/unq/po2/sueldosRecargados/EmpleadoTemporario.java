@@ -2,30 +2,21 @@ package ar.edu.unq.po2.sueldosRecargados;
 
 public class EmpleadoTemporario extends Empleado{
 
+	private Boolean tieneFamilia;
+	private int horasTrabajadas;
 	
+	public EmpleadoTemporario(Boolean tieneFamilia, int horasTrabajadas){
+		this.tieneFamilia = tieneFamilia;
+		this.horasTrabajadas = horasTrabajadas;
+	}
 	
 	@Override
-	double calcularBonoFamiliar() {
-		// TODO Auto-generated method stub
-		return 0;
+	double calcularSueldoBruto() {
+		return 1000 + (this.horasTrabajadas * 5) + this.bonoFamiliar();
 	}
 
-	@Override
-	void setValorPorHora() {
-		this.valorPorHora
-		
-	}
-
-	@Override
-	void setHorasTrabajadas() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	void setSueldoBasico() {
-		// TODO Auto-generated method stub
-		
+	private double bonoFamiliar() {
+	    return tieneFamilia ? 100 : 0;
 	}
 
 }
