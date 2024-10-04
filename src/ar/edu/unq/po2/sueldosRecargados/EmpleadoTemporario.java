@@ -12,11 +12,15 @@ public class EmpleadoTemporario extends Empleado{
 	
 	@Override
 	double calcularSueldoBruto() {
-		return 1000 + (this.horasTrabajadas * 5) + this.bonoFamiliar();
+		return this.sueldoBasico() + (this.horasTrabajadas * 5) + this.bonoFamiliar();
 	}
 
 	private double bonoFamiliar() {
 	    return tieneFamilia ? 100 : 0;
+	}
+	
+	private double sueldoBasico() {
+		return 1000;
 	}
 
 }

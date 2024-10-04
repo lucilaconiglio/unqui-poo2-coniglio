@@ -1,10 +1,10 @@
 package ar.edu.unq.po2.sueldosRecargados;
 
-public class Pasante extends Empleado{
+public class EmpleadoPasante extends Empleado {
 
 	private int horasTrabajadas;
 
-	public Pasante(int horasTrabajadas) {
+	public EmpleadoPasante(int horasTrabajadas) {
 		this.horasTrabajadas = horasTrabajadas;
 	}
 
@@ -12,5 +12,5 @@ public class Pasante extends Empleado{
 	double calcularSueldoBruto() {
 		return 40 * this.horasTrabajadas;
 	}
-	
+
 }

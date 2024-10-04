@@ -10,11 +10,14 @@ public class EmpleadoPlanta extends Empleado {
 	
 	@Override
 	double calcularSueldoBruto() {
-		return 3000 + this.bonoPorHijo();
+		return this.sueldoBasico() + this.bonoPorHijo();
 	}
 	
 	private double bonoPorHijo() {
 		return 150 * this.cantidadDeHijos;
 	}
 	
+	private double sueldoBasico() {
+		return 3000;
+	}
 }
