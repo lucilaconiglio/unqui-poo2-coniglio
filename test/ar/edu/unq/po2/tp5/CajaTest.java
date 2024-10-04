@@ -22,8 +22,8 @@ class CajaTest {
 	
 	@Test
 	void registrarDosProductos() {
-		caja.registrarProducto(arroz);
-		caja.registrarProducto(vino);
+		/*caja.registrarProducto(arroz);
+		caja.registrarProducto(vino);*/
 		assertEquals(caja.getMontoTotal(), 71.2);
 		
 	}
@@ -32,10 +32,10 @@ class CajaTest {
 	void verificarStock() { 
 		assertEquals(arroz.getStock(), 20);
 		assertEquals(vino.getStock(), 150);
-		caja.registrarProducto(arroz);
-		caja.registrarProducto(vino);
-		caja.registrarProducto(vino);
-		caja.registrarProducto(vino);
+		//caja.registrarProducto(arroz);
+		//caja.registrarProducto(vino);
+		//caja.registrarProducto(vino);
+		//caja.registrarProducto(vino);
 		assertEquals(arroz.getStock(), 19);
 		assertEquals(vino.getStock(), 147);
 	}
