@@ -2,23 +2,26 @@ package ar.edu.unq.po2.palabrasOrdenadas;
 
 import javax.swing.DefaultListModel;
 
-public class AdaptadorListaDePalabras  extends DefaultListModel<String>{
+public class AdaptadorListaDePalabras extends DefaultListModel<String> {
 
-	private ListaDePalabrasOrdenadas listaDePalabrasOrdenadas;
-	 	
-    @Override
-    public void addElement(String palabra) {
-        listaDePalabrasOrdenadas.agregarPalabra(palabra);
-        fireContentsChanged(this, 0, listaDePalabrasOrdenadas.cantidadDePalabras() - 1);
-    }
+	private final ListaDePalabrasOrdenadas listaDePalabrasOrdenadas;
 
-    @Override
-    public String getElementAt(int index) {
-        return listaDePalabrasOrdenadas.getPalabraDePosicion(index);
-    }
+	public AdaptadorListaDePalabras() {
+		this.listaDePalabrasOrdenadas = new ListaDePalabrasOrdenadas();
+	}
 
-    @Override
-    public int getSize() {
-        return listaDePalabrasOrdenadas.cantidadDePalabras();
-    }
+	@Override
+	public void addElement(String palabra) {
+		listaDePalabrasOrdenadas.agregarPalabra(palabra);
+	}
+
+	@Override
+	public String getElementAt(int index) {
+		return listaDePalabrasOrdenadas.getPalabraDePosicion(index);
+	}
+
+	@Override
+	public int getSize() {
+		return listaDePalabrasOrdenadas.cantidadDePalabras();
+	}
 }
