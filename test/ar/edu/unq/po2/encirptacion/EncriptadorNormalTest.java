@@ -5,13 +5,13 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class EncriptadorNaiveTest {
+public class EncriptadorNormalTest {
 
-	private EncriptadorNaive encriptador;
+	private EncriptadorNormal encriptador;
 
 	@BeforeEach
 	public void setUp() {
-		encriptador = new EncriptadorNaive();
+		encriptador = new EncriptadorNormal();
 	}
 
 	@Test
