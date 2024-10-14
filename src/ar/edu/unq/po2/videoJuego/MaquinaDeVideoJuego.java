@@ -23,5 +23,9 @@ public class MaquinaDeVideoJuego {
 	public void setEstadoJuego(EstadoJuego estadoJuego) {
 		this.estadoJuego = estadoJuego;
 	}
+	
+	public EstadoJuego getEstadoJuego() {
+		return this.estadoJuego; 
+	}
 
 }
