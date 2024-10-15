@@ -30,12 +30,8 @@ public class Investigador implements Observer{
 	}
 	
 	private Boolean estaSuscripto(Articulo articulo) {
-		boolean estaSuscripto = false;
-		for(Interes a: intereses) {
-			if (a.esDeInteres(articulo)) {
-				estaSuscripto = true;
-			}
-		}
-		return estaSuscripto;
+		return intereses.stream()
+						.anyMatch(i -> i.esDeInteres(articulo));
+		
 	}
 }
