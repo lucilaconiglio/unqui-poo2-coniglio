@@ -1,31 +1,31 @@
 package ar.edu.unq.po2.aplicacionDeportiva;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class AplicacionMovil extends Observer{
+public class AplicacionMovil extends Servidor {
 
 	private List<String> interesContrincantes;
-	
+
 	public AplicacionMovil(String nombre) {
 		super(nombre);
-		// TODO Auto-generated constructor stub
+		this.interesContrincantes = new ArrayList<String>();
 	}
 
 	@Override
-	public boolean esDeInteres(Partido partido) {
-		super(partido) ||
-		getInteresConstrncantes().stream()
-         .anyMatch(contrincante -> partido.getContrincantes().contains(contrincante));
+	protected boolean esDeInteres(Partido partido) {
+		return super.esDeInteres(partido) || getInteresConstrncantes().stream()
+				.anyMatch(contrincante -> partido.getContrincantes().contains(contrincante));
 	}
-	
-	public List<String>  getInteresConstrncantes() {
+
+	public List<String> getInteresConstrncantes() {
 		return interesContrincantes;
 	}
-	
+
 	public void addInteresConstrncantes(String contrincante) {
 		interesContrincantes.add(contrincante);
 	}
-	
+
 	public void removeInteresConstrncantes(String contrincante) {
 		interesContrincantes.remove(contrincante);
 	}
