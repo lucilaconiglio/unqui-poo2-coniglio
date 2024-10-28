@@ -44,4 +44,10 @@ public class EstadoInicio extends EstadoJuego {
 
 	}
 
+	@Override
+	public void recibirPregunta(Juego juego, Participante participante, String pregunta) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
